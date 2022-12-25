@@ -1,0 +1,8 @@
+/publisher/.env
+/publisher/Pipfile
+/publisher/Pipfile.lock
+/subscriber/.env
+/subscriber/Pipfile
+/subscriber/Pipfile.lock
+redis-publisher.env
+redis-subscriber.env
