@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  redis: 
+    container_name: redis
+    image: redis:7.0-alpine
+    restart: always
+  redis-publisher: 
+    container_name: redis-publisher
+    image: ihp001/redis-publisher:1.0
+    restart: always
+    env_file: 
+      - redis-publisher.env
+    depends_on: 
+      - redis
+  redis-subscriber: 
+    container_name: redis-subscriber
+    image: ihp001/redis-subscriber:1.0
+    restart: always
+    env_file:
+      - redis-subscriber.env
+    depends_on:
+      - redis
